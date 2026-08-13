@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Senthil Arasu K and Madhumitha R//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Senthil Arasu K and Madhumitha R Wedding
+BEGIN:VEVENT
+UID:reception-thiruvarur-20260822@senthil-madhumitha.wedding
+DTSTAMP:20260813T000000Z
+DTSTART:20260822T133000Z
+SUMMARY:Senthil Arasu K and Madhumitha R - Reception
+LOCATION:Lakshmi Mahal\, Thiruvarur\, Tamil Nadu
+DESCRIPTION:Wedding reception of Senthil Arasu K and Madhumitha R. Starts after 7:00 PM IST.
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Senthil Arasu K and Madhumitha R//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Senthil Arasu K and Madhumitha R Wedding
+BEGIN:VEVENT
+UID:reception-trichy-20260824@senthil-madhumitha.wedding
+DTSTAMP:20260813T000000Z
+DTSTART:20260824T130000Z
+SUMMARY:Senthil Arasu K and Madhumitha R - Reception
+LOCATION:VS Mohammed Ibrahim Mahal\, Kajamalai\, Trichy\, Tamil Nadu
+DESCRIPTION:Wedding reception of Senthil Arasu K and Madhumitha R. Starts after 6:30 PM IST.
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
