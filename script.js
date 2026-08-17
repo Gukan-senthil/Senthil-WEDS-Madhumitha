@@ -14,11 +14,13 @@ function updateCountdown(targetId, eventTime) {
             new Date(eventTime).getTime() - Date.now();
 
         if (remaining <= 0) {
+
             target.innerHTML = `
                 <div class="countdown-started">
                     The celebration has begun! ❤️
                 </div>
             `;
+
             return;
         }
 
@@ -30,13 +32,14 @@ function updateCountdown(targetId, eventTime) {
         ];
 
         target.innerHTML = units.map(
-            ([label, ms]) => {
+            ([label, milliseconds]) => {
 
-                const value = Math.floor(
-                    remaining / ms
-                );
+                const value =
+                    Math.floor(
+                        remaining / milliseconds
+                    );
 
-                remaining %= ms;
+                remaining %= milliseconds;
 
                 return `
                     <div>
@@ -66,12 +69,30 @@ document.addEventListener("click", function (event) {
     if (!button) return;
 
 
-    /*
-       Android:
-       Open Google Calendar event creation page.
-    */
+    /* -----------------------------------------
+       Detect mobile devices
+       ----------------------------------------- */
 
-    if (/Android/i.test(navigator.userAgent)) {
+    const userAgent =
+        navigator.userAgent || navigator.vendor || window.opera;
+
+    const isAndroid =
+        /Android/i.test(userAgent);
+
+    const isIOS =
+        /iPhone|iPad|iPod/i.test(userAgent) ||
+        (
+            navigator.platform === "MacIntel" &&
+            navigator.maxTouchPoints > 1
+        );
+
+
+    /* -----------------------------------------
+       ANDROID
+       Open Google Calendar
+       ----------------------------------------- */
+
+    if (isAndroid) {
 
         const googleCalendarURL =
             button.getAttribute(
@@ -85,15 +106,32 @@ document.addEventListener("click", function (event) {
             window.location.href =
                 googleCalendarURL;
 
+            return;
         }
+    }
+
+
+    /* -----------------------------------------
+       APPLE DEVICES
+       Open .ics calendar file
+       ----------------------------------------- */
+
+    if (isIOS) {
+
+        /*
+         * Do NOT prevent the default action.
+         * Safari will handle the .ics file.
+         */
 
         return;
     }
 
 
-    /*
-       iPhone / iPad / Mac / Windows:
-       Follow the normal .ics link.
-    */
+    /* -----------------------------------------
+       DESKTOP
+       Open/download .ics file
+       ----------------------------------------- */
+
+    return;
 
 });
